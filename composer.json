@@ -1,0 +1,21 @@
+{
+    "name": "squintal/activerecord",
+    "authors": [
+        {
+            "name": "squintal73",
+            "email": "sidnei_quintal@yahoo.com.br"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        },
+        "files": [
+            "app/helpers/helpers.php"
+        ]
+    },
+    "require": {
+        "larapack/dd": "1.*"
+    }
+}
