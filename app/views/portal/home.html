@@ -2,19 +2,17 @@
 
 {% block portal %}
 
-<table border="2">
-
-	<th>Nome</th><th>Email</th>
-	{% for user in users %}
-	<tr>
-			<td>{{ user.name }} </td>
-			<td>{{ user.email }}</td>
-		</tr>
-		{% endfor %}
-		
-	
-</table>
-
-
+<div class="container mx-auto">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="px-4 py-2 bg-gray-200 font-semibold">Nome</div>
+        <div class="px-4 py-2 bg-gray-200 font-semibold">Email</div>
+    </div>
+    {% for user in users %}
+    <div class="grid grid-cols-2 gap-4">
+        <div class="px-4 py-2">{{ user.name }}</div>
+        <div class="px-4 py-2">{{ user.email }}</div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

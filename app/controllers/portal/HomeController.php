@@ -11,7 +11,7 @@ class HomeController extends ContainerController
     public function index()
     {
 
-        echo "HOME";
+
         $user = new User();
         $users = $user->execute(new FindAll(fields:'id,name,email'));
 
