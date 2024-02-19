@@ -1,0 +1,20 @@
+{% extends 'portal/layout.html' %}
+
+{% block portal %}
+
+<table border="2">
+
+	<th>Nome</th><th>Email</th>
+	{% for user in users %}
+	<tr>
+			<td>{{ user.name }} </td>
+			<td>{{ user.email }}</td>
+		</tr>
+		{% endfor %}
+		
+	
+</table>
+
+
+
+{% endblock %}

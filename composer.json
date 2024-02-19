@@ -9,13 +9,16 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "app\\":"app"
+            "app\\":"app",
+            "core\\":"core"
         },
         "files": [
             "app/helpers/helpers.php"
         ]
     },
     "require": {
-        "larapack/dd": "1.*"
+        "larapack/dd": "1.*",
+        "twig/twig": "^2.4"
+       
     }
 }
