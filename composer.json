@@ -18,7 +18,7 @@
     },
     "require": {
         "larapack/dd": "1.*",
-        "twig/twig": "^2.4"
-       
+        "twig/twig": "^2.4",
+        "yoast/phpunit-polyfills":"^2.0"
     }
 }

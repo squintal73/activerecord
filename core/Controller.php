@@ -74,34 +74,50 @@ class Controller
             return ucfirst($controller) . 'Controller';
         }
 
-        // Remove
     }
 
+    /**
+     * Check if the current URI is the home page '/'
+     *
+     * @return bool
+     */
     private function isHome()
     {
         return ($this->uri == '/');
     }
 
+    /**
+     * Check if the specified controller exists in any of the specified folders
+     *
+     * @param string $controller
+     * @return bool
+     */
     private function controllerExist($controller)
     {
         $controllerExist = false;
 
+        // Iterate through each folder
         foreach ($this->folders as $folder) {
+            // Check if the class exists in the current folder
             if (class_exists($folder . '\\' . $controller)) {
                 $controllerExist = true;
-                $this->namespace = $folder;
-                $this->controller = $controller;
+                $this->namespace = $folder; // Set the current folder as the namespace
+                $this->controller = $controller; // Set the current controller
             }
         }
 
         return $controllerExist;
-
     }
 
+    /**
+     * Instantiate the specified controller with the correct namespace
+     *
+     * @return object
+     */
     private function instantiateController()
     {
-        $controller = $this->namespace . '\\' . $this->controller;
-        return new $controller();
+        $controller = $this->namespace . '\\' . $this->controller; // Get the full path of the controller
+        return new $controller(); // Instantiate and return an instance of the controller
     }
 
 }
