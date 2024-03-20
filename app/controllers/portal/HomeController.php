@@ -16,7 +16,7 @@ class HomeController extends ContainerController
         $users = $user->execute(new FindAll(fields:'id,name,email'));
 
         $this->view([
-            'title' => 'Lista de users',
+            'title' => 'Home Users',
             'users' => $users,
         ], 'portal.home');
     }

@@ -1,42 +1,25 @@
 <?php
 
-
+// Import the necessary classes
 require '../bootstrap.php';
-
-
 use core\Controller;
 use core\Method;
 use core\Parameters;
 
 try {
-    $controller = new Controller();
-    $controller = $controller->load();
+    // Create an instance of the Controller class and load it
+    $controller = (new Controller())->load();
 
-    $method = new Method();
-    $method = $method->load($controller);
+    // Create an instance of the Method class and load it with the controller
+    $method = (new Method())->load($controller);
 
-    $parameters = new Parameters();
-    $parameters = $parameters->load();
+    // Create an instance of the Parameters class and load it
+    $parameters = (new Parameters())->load();
 
+    // Call the appropriate method on the controller with the parameters
     $controller->$method($parameters);
 
 } catch (\Exception $e) {
+    // Display the error message
     dd($e->getMessage());
 }
-
-// use app\database\models\User;
-// use app\database\activerecord\Update;
-// use app\database\activerecord\Delete;
-// use app\database\activerecord\FindAll;
-// use app\database\activerecord\FindBy;
-
-// $user = new User();
-// $user->name = 'Robert';
-// $user->email = 'sidneir@gmail.com';
-// $user->id = 1;
-
-// echo $user->execute(new Update(field:'id', value:'1'));
-// echo $user->execute(new Update(field:'id', value:'1'));
-// echo $user->execute(new Delete(field:'id', value:'1'));
-// dd($user->execute(new FindBy(field:'id', value:'7', fields:'id, name')));
-//dd($user->execute(new FindAll(fields:'id')));
